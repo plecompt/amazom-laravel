@@ -5,15 +5,19 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\DashboardController;
 
 //home
 Route::get('/', [ProductController::class, 'index'])->name('products.index');
 
-//Auth
+//auth
 Route::get('/login', [AuthController::class, 'login'])->name('auth.login');
-Route::post('/login', [AuthController::class, 'login-submit'])->name('auth.login.submit');
+Route::post('/login', [AuthController::class, 'loginSubmit'])->name('auth.login.submit');
 Route::get('/register', [AuthController::class, 'register'])->name('auth.register');
-Route::post('/register', [AuthController::class, 'register-submit'])->name('auth.register.submit');
+Route::post('/register', [AuthController::class, 'registerSubmit'])->name('auth.register.submit');
+Route::get('/logout', [AuthController::class, 'logout'])->name('auth.logout');
+Route::get('/forgot-password', [AuthController::class, 'forgotPassword'])->name('auth.forgot.password');
+Route::post('/forgot-password', [AuthController::class, 'forgotPasswordSubmit'])->name('auth.forgot.password.submit');
 
 //products
 Route::get('products/create', [ProductController::class, 'create'])->name('products.create');
@@ -32,3 +36,6 @@ Route::get('categories/show/{id}', [CategoryController::class, 'show'])->name('c
 Route::get('categories/edit/{id}', [CategoryController::class, 'edit'])->name('categories.edit');
 Route::post('categories/update/{id}', [CategoryController::class, 'update'])->name('categories.update');
 Route::get('categories/delete/{id}', [CategoryController::class, 'delete'])->name('categories.delete');
+
+//dashboard
+Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.index');

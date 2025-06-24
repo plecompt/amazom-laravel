@@ -11,6 +11,14 @@
         <nav class="nav flex">
             <a href="{{ route('products.index') }}">Amazom</a>
             <a href="{{ route('products.index') }}">Accueil</a>
+            @auth
+                <a href="{{ route('auth.logout') }}">Deconnexion</a>
+            @else
+                <div style="display: flex; gap: 20px;">
+                    <a href="{{ route('auth.login') }}">Connexion</a>                
+                    <a href="{{ route('auth.register') }}">Inscription</a>
+                </div>
+            @endauth
         </nav>
     </header>
 

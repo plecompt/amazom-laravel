@@ -1,3 +1,5 @@
+@vite(['resources/css/products.css'])
+
 @extends('layouts.app')
 
 @section('title', 'Accueil')
@@ -27,7 +29,7 @@
                         onclick="window.location.href='{{ route('products.show', $product->slug) }}'"
                         style="cursor: pointer;">
                         <strong><span>{{$product->name}}</span></strong>
-                        <span>{{ Str::words($product->description, 5, '...') }}</span>
+                        <span>{{ Str::words($product->description, 15, '...') }}</span>
                         <span>{{$product->price}}</span>
                         <span>{{ $product->category->name }}</span>
                         <button>Ajouter au panier</button>
