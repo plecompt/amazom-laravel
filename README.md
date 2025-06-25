@@ -56,13 +56,7 @@ exit
 ### 7. Exécuter les migrations et seeders
 php artisan migrate --seed
 
-### 8. Créer le lien symbolique pour le storage
-php artisan storage:link
-
-### 9. Compiler les assets
-npm run dev
-
-### 10. Lancer le serveur de développement
+### 8. Lancer le serveur de développement
 php artisan serve
 
 Application maintenant accessible sur : http://localhost:8000
