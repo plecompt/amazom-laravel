@@ -66,11 +66,11 @@ Application maintenant accessible sur : http://localhost:8000
 - Utilisateur : user@amazom.com / user1234
 
 ## Commandes utiles
-php artisan cache:clear
-php artisan config:clear
-php artisan view:clear
-php artisan migrate:fresh --seed
-php artisan test
+- php artisan cache:clear
+- php artisan config:clear
+- php artisan view:clear
+- php artisan migrate:fresh --seed
+- php artisan test
 
 ## Licence
 Ce projet est sous licence MIT.
